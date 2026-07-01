@@ -1,18 +1,19 @@
-container_image: "24bot-worker:latest"
+# Fixture per-repo config (§1.8). The typed loader is M4.1; the M7.1 E2E builds
+# the BotConfig value objects programmatically, so this documents intent and keeps
+# the fixture a realistic .24bot-governed repo.
+container_image: ghcr.io/acme/24bot-worker:py312
 commands:
-  test: "python -m pytest -q"
+  test: python -m pytest -q -p no:cacheprovider
 engines:
-  reasoning:  { provider: anthropic, model: claude-opus-4-8 }
+  reasoning: { provider: anthropic, model: claude-opus-4-8 }
   classifier: { provider: anthropic, model: claude-opus-4-8 }
-  reviewer:   { provider: anthropic, model: claude-opus-4-8 }
+  reviewer: { provider: anthropic, model: claude-opus-4-8 }
 trust:
   author_allowlist: ["mtarvos"]
 risk_policy:
-  auto_merge: ["low", "medium"]
-  dual_plan_min_risk: "high"
-  sensitive_globs: ["**/.24bot/**", "**/pyproject.toml"]
+  auto_merge: [low, medium]
 caps:
-  global_slots: 2
+  global_slots: 4
   step_timeout_s: 1800
   max_retries: 2
   max_escalations: 5
