@@ -1,0 +1,20 @@
+name: bug
+when:
+  type: bug
+steps:
+  - id: repro
+    role: tester
+    on_no_repro: { label: "cannot-reproduce", escalate: true }
+  - id: plan
+    role: teamlead
+  - id: implement
+    role: implementer
+    acquires: path_lock
+  - id: verify
+    role: tester
+    parallel_with: review
+  - id: review
+    role: reviewer
+  - id: merge_gate
+    policy_from: config.risk_policy
+    re_review_limit: 1

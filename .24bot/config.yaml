@@ -1,0 +1,21 @@
+container_image: "24bot-worker:latest"
+commands:
+  test: "python -m pytest -q"
+engines:
+  reasoning:  { provider: anthropic, model: claude-opus-4-8 }
+  classifier: { provider: anthropic, model: claude-opus-4-8 }
+  reviewer:   { provider: anthropic, model: claude-opus-4-8 }
+trust:
+  author_allowlist: ["mtarvos"]
+risk_policy:
+  auto_merge: ["low", "medium"]
+  dual_plan_min_risk: "high"
+  sensitive_globs: ["**/.24bot/**", "**/pyproject.toml"]
+caps:
+  global_slots: 2
+  step_timeout_s: 1800
+  max_retries: 2
+  max_escalations: 5
+  task_token_budget: 1500000
+  mutation_max_mutants: 30
+  mutation_timeout_s: 600
