@@ -6,4 +6,4 @@ and merge — landing the regression test on the default branch.
 
 
 def add(a: int, b: int) -> int:
-    return a - b  # BUG: should be a + b
+    return a + b
