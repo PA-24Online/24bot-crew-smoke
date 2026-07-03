@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "step": "verify",
+  "role": "tester",
+  "engine": "codex",
+  "run_seq": 6,
+  "status": "ok",
+  "summary": "Pinned regression test passes: calculator.add(2, 3) returns 5; pytest suite command could not run in this sandbox because pytest/python wrapper was unavailable.",
+  "test_paths": [
+    "tests/test_calculator.py"
+  ],
+  "artifacts": [
+    {
+      "path": "tests/test_calculator.py",
+      "kind": "test"
+    }
+  ],
+  "tests": {
+    "added": [],
+    "command": "python3 -m unittest tests.test_calculator",
+    "result": "green",
+    "level": "unit"
+  }
+}
