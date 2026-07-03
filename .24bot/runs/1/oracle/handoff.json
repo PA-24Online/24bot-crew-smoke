@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "step": "oracle",
+  "role": "tester",
+  "engine": "claude-opus-4-8",
+  "run_seq": 3,
+  "status": "ok",
+  "summary": "Red repro authored: tests/test_add.py fails on base — add(2,3) returns -1, expected 5.",
+  "test_paths": ["tests/test_add.py"],
+  "product_paths": [],
+  "artifacts": [{ "path": "tests/test_add.py", "kind": "test" }],
+  "tests": {
+    "added": ["tests/test_add.py"],
+    "command": "python -m pytest -q -p no:cacheprovider tests/test_add.py",
+    "result": "red",
+    "level": "unit"
+  },
+  "next": "Implementer fixes calculator.add (a - b -> a + b); tests/test_add.py becomes read-only regression coverage."
+}

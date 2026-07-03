@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "step": "verify",
+  "role": "tester",
+  "run_seq": 6,
+  "status": "ok",
+  "summary": "Verified green on head: oracle repro + fresh black-box assertions all pass (5 passed); add(2,3)==5.",
+  "test_paths": ["tests/test_add_verify.py"],
+  "product_paths": [],
+  "artifacts": [
+    { "path": "tests/test_add_verify.py", "kind": "test" }
+  ],
+  "tests": {
+    "added": ["tests/test_add_verify.py"],
+    "command": "python -m pytest -q -p no:cacheprovider",
+    "result": "green",
+    "level": "unit"
+  },
+  "next": "Fix confirmed; oracle repro (tests/test_add.py) and verify assertions (tests/test_add_verify.py) both green on head — ready to merge as regression coverage."
+}

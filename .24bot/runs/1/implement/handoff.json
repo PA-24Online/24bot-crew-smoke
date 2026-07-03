@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "step": "implement",
+  "role": "implementer",
+  "engine": "claude-opus-4-8",
+  "run_seq": 5,
+  "status": "ok",
+  "summary": "fixed calculator.add to add operands (a-b -> a+b); suite green",
+  "artifacts": [{ "path": "calculator.py", "kind": "product" }],
+  "product_paths": ["calculator.py"],
+  "tests": {
+    "command": "python -m pytest -q",
+    "result": "green",
+    "level": "unit"
+  }
+}
