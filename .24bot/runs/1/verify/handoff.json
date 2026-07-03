@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "step": "verify",
+  "role": "tester",
+  "engine": "claude",
+  "run_seq": 6,
+  "status": "ok",
+  "summary": "Verified green: add now returns a+b; oracle repro + fresh black-box assertions all pass (6 passed).",
+  "test_paths": ["tests/test_calculator.py", "tests/test_calculator_verify.py"],
+  "product_paths": ["calculator.py"],
+  "artifacts": [
+    { "path": "tests/test_calculator_verify.py", "kind": "test" }
+  ],
+  "tests": {
+    "added": ["tests/test_calculator_verify.py"],
+    "command": "python -m pytest -q -p no:cacheprovider tests/test_calculator.py tests/test_calculator_verify.py",
+    "result": "green",
+    "level": "unit"
+  }
+}

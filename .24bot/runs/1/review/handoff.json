@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "step": "review",
+  "role": "reviewer",
+  "engine": "claude",
+  "run_seq": 7,
+  "status": "ok",
+  "summary": "advisory: LGTM — calculator.py:9 flips a-b to a+b per plan; suite green (4 passed, 6 with verify), Implementer stayed in product_paths and left the oracle test intact; no material nits.",
+  "artifacts": [
+    { "path": "24bot-run://1/review/review.md", "kind": "review" }
+  ],
+  "product_paths": ["calculator.py"],
+  "test_paths": ["tests/test_calculator.py"]
+}
