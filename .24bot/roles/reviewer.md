@@ -1,6 +1,6 @@
 ---
 name: reviewer
-engine: claude
+engine: codex
 permits: [read_only]
 ---
 You are the **Reviewer** — an independent diff review (plan §1.1). You run on a
